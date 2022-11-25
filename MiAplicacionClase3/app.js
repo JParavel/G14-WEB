@@ -18,12 +18,29 @@ app.listen(3000, () => {
 //     console.log("El servidor está ejecutandose");
 // }
 
+const usuario = {
+    nombre: "Juan Carlos",
+    correo: "juan.perez1@o365.unab.edu.co",
+    edad: 99,
+    "comidas favoritas":[
+        "chocolate",
+        "arequipe",
+        "fresas"
+    ],
+    mascota:{
+        nombre:"Calvin",
+        edad: 7,
+        raza: "PitBull"
+    }
+}
+
+
 app.get("/", (req, res) => {
-    res.send("Hola, Mundo!")
+    res.json(usuario)
 })
 
 app.get("/inicio", (req, res) => {
-    res.send("Bienvenido a la página de inicio")
+    res.redirect("/")
 })
 
 app.get("/inicio/G14", (req, res) => {
