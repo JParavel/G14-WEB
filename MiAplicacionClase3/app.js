@@ -1,4 +1,6 @@
 import express from "express";
+import routerUsers from "./routes/users.js";
+import routerProducts from "./routes/products.js";
 
 const app = express()
 const puerto = 3000
@@ -6,6 +8,9 @@ const puerto = 3000
 app.listen(3000, () => {
     console.log("El servidor está ejecutandose");
 })
+
+app.use("/users", routerUsers)
+app.use("/products", routerProducts)
 
 // //Declaramos una funcion
 // function callback(){
