@@ -9,6 +9,7 @@ app.listen(3000, () => {
     console.log("El servidor está ejecutandose");
 })
 
+app.use(express.json())
 app.use("/users", routerUsers)
 app.use("/products", routerProducts)
 
@@ -22,22 +23,6 @@ app.use("/products", routerProducts)
 // () => {
 //     console.log("El servidor está ejecutandose");
 // }
-
-const usuario = {
-    nombre: "Juan Carlos",
-    correo: "juan.perez1@o365.unab.edu.co",
-    edad: 99,
-    "comidas favoritas":[
-        "chocolate",
-        "arequipe",
-        "fresas"
-    ],
-    mascota:{
-        nombre:"Calvin",
-        edad: 7,
-        raza: "PitBull"
-    }
-}
 
 
 app.get("/", (req, res) => {
