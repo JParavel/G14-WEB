@@ -15,7 +15,7 @@ userRouter.get("/:nombre/:ciudad", (req, res) =>{
 })
 //Actualizar
 //PUT
-userRouter.put("/:id", (req, res) =>{
+userRouter.patch("/:id", (req, res) =>{
     updateUser(req, res)
 })
 //Eliminar
