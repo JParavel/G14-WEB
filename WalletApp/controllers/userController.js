@@ -1,8 +1,15 @@
 import userModel from "../models/userModel.js";
+import bcrypt from "bcrypt"
 
 //CREATE
-export async function createUser(req, res){
+export async function createUser(req, res) {
     const usuario = req.body;
+    const { contraseña } = usuario
+
+    // const salt = await bcrypt.genSalt(10)
+    const contraseñaEncriptada = await bcrypt.hash(contraseña, 10);
+
+    usuario.contraseña = contraseñaEncriptada
 
     let documento
 
@@ -19,14 +26,14 @@ export async function createUser(req, res){
 }
 
 //READ
-export async function readUser(req, res){
+export async function readUser(req, res) {
 
-    const {nombre} = req.params
+    const { nombre } = req
 
     let documento
 
     try {
-        documento = await userModel.findOne({nombre})
+        documento = await userModel.findOne({ nombre })
     } catch (error) {
         res.status(400)
         res.json(error.message)
@@ -38,16 +45,16 @@ export async function readUser(req, res){
 }
 
 //Update
-export async function updateUser(req, res){
-    const {id} = req.params
-    const {cambios} = req.body
+export async function updateUser(req, res) {
+    const { nombre } = req.params
+    const { cambios } = req.body
 
     let documento;
 
     try {
         documento = await userModel.updateOne({
-            "_id": id
-        }, cambios, {runValidators:true})
+            nombre
+        }, cambios, { runValidators: true })
     } catch (error) {
         res.status(400)
         res.json(error.message)
@@ -59,8 +66,8 @@ export async function updateUser(req, res){
 }
 
 //DELETE
-export async function deleteUser(req, res){
-    const {id} = req.params
+export async function deleteUser(req, res) {
+    const { id } = req.params
 
     let documento;
 
