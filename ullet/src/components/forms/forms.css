@@ -1,0 +1,17 @@
+.boton {
+    padding: 0.5rem;
+    border: none;
+    background-color: brown;
+    color: white;
+}
+
+.boton:hover {
+    background-color: rgb(137, 35, 35);
+    cursor: pointer
+}
+
+.input {
+    text-align: left;
+    border: none;
+    padding: 0.2rem;
+}
