@@ -17,12 +17,7 @@ function validacionPar(v) {
 }
 
 const userSchema = new mongoose.Schema({
-    "id": { type: String, default: () => genKey(10), set: () => genKey(10), immutable: true },
     "nombre": { type: String, required: true, maxlength: 30, minlength: 3, unique: true, immutable: true },
-    "edad": { type: Number, required: true, min: 18, max: 99 },
-    "ciudad": { type: String, required: true, enum: ciudades },
-    // "date": { type: Date, default: Date.now },
-    "activo": Boolean,
     "contraseña": { type: String, required: true }
     // "perfil": profileSchema
 }, { timestamps: true })

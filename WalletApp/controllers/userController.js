@@ -6,6 +6,13 @@ export async function createUser(req, res) {
     const usuario = req.body;
     const { contraseña } = usuario
 
+    if (contraseña == null) {
+        res.sendStatus(400)
+        return
+    }
+
+    console.log(usuario);
+
     // const salt = await bcrypt.genSalt(10)
     const contraseñaEncriptada = await bcrypt.hash(contraseña, 10);
 

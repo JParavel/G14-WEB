@@ -1,3 +1,4 @@
+import cors from "cors"
 import express from "express"
 import mongoose from "mongoose";
 import mwPrueba from "./Middlewares/mwPrueba.js";
@@ -7,7 +8,7 @@ import userRouter from "./routes/userRouter.js";
 
 const app = express()
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 8080
 
 app.listen(port, () => {
     console.log("El servidor está ejecutandose correctamente.");
@@ -20,6 +21,9 @@ mongoose.connect("mongodb+srv://walletapp:walletapp@clusterwalletapp.ryjayfo.mon
     }
 })
 
+app.use(cors({
+    origin: "http://localhost:3000"
+}))
 app.use(express.json())
 app.use(mwPrueba)
 app.use("/user", userRouter)

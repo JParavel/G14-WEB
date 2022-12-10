@@ -7,15 +7,15 @@ const ACCESS_TOKEN = "b36d6185c3638eb5ea0b7ac017c36e3a4b5aef7eac566c491cad96b4cb
 
 export default async function login(req, res) {
 
-    const { nombre, password } = req.headers;
+    const { user, password } = req.headers;
 
-    if (nombre == null || password == null) {
+    if (user == null || password == null) {
         res.sendStatus(401)
         return
     }
 
     const usuario = await userModel.findOne({
-        nombre
+        nombre: user
     })
 
     if (usuario == null) {
@@ -26,7 +26,7 @@ export default async function login(req, res) {
     const valido = await bcrypt.compare(password, usuario.contraseña)
 
     if (valido) {
-        const token = jwt.sign(nombre, ACCESS_TOKEN)
+        const token = jwt.sign(user, ACCESS_TOKEN)
         res.status(200).json({ token })
     } else {
         res.sendStatus(401)
