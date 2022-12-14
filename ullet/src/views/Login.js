@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Boton from './forms/Boton';
-import Input from './forms/Input';
-import Flex from './utils/Flex';
-import Gap from './utils/Gap';
+import Boton from '../components/forms/Boton';
+import Input from '../components/forms/Input';
+import Flex from '../components/utils/Flex';
+import Gap from '../components/utils/Gap';
 
 function Login() {
 
