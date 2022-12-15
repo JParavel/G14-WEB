@@ -1,0 +1,12 @@
+.nav {
+    box-shadow: 0 3px 10px;
+}
+
+.flex {
+    align-items: center;
+    gap: 2rem;
+}
+
+li:nth-child(4) {
+    margin-left: auto;
+}

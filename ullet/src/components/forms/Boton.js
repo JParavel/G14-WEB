@@ -3,10 +3,12 @@ import "./forms.css"
 
 function Boton(props) {
 
-    const { children, onClick, type } = props
+    const { children, onClick, type, style } = props
 
     return (
-        <button className='boton' onClick={onClick} type={type}>{children}</button>
+        <button className={style + "-button"} onClick={onClick} type={type}>
+            {children}
+        </button>
     );
 }
 

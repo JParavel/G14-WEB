@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import Boton from '../components/forms/Boton';
 import Input from '../components/forms/Input';
-import Flex from '../components/utils/Flex';
-import Gap from '../components/utils/Gap';
 
 function Login() {
 
@@ -43,15 +41,11 @@ function Login() {
 
     return (
         <form onSubmit={(evento) => onSubmit(evento)}>
-            <Flex padding="2rem" borderRadius="1rem">
-                <h1>Mi App</h1>
-                <Gap direction="vertical">1rem</Gap>
-                <Input onChange={(e) => onUserChange(e)}>User Name</Input>
-                <Gap direction="vertical">0.5rem</Gap>
-                <Input type="password" onChange={(e) => onPasswordChange(e)}>Password</Input>
-                <Gap direction="vertical">3rem</Gap>
-                <Boton type="submit">Login</Boton>
-            </Flex>
+            <h1>Mi App</h1>
+            <Input onChange={(e) => onUserChange(e)}>User Name</Input>
+            <Input type="password" onChange={(e) => onPasswordChange(e)}>Password</Input>
+            <Boton type="submit">Login</Boton>
+
         </form>
     );
 }

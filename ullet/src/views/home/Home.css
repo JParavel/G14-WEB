@@ -1,0 +1,25 @@
+.grid {
+    grid-template-columns: 2fr 3fr;
+}
+
+.hero-image img {
+    max-width: 100%;
+}
+
+.headline {
+    margin-top: 8rem;
+}
+
+.supporting {
+    margin: 4rem 0rem;
+}
+
+@media (max-width: 45rem) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image {
+        grid-row: 1;
+    }
+}

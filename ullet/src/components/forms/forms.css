@@ -1,7 +1,27 @@
-.boton {
-    padding: 0.5rem;
+.wire-button,
+.fill-button {
+    font-weight: bold;
+    padding: 0.5rem 2.5rem;
+    border-radius: calc(infinity * 1px);
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.wire-button {
+    background-color: transparent;
+    border: solid;
+}
+
+.wire-button:hover {
+    background-color: var(--main-color);
+    color: white;
     border: none;
-    background-color: brown;
+}
+
+.fill-button {
+    background-color: var(--enf-color);
+    border: none;
     color: white;
 }
 
