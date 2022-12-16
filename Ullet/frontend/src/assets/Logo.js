@@ -7,7 +7,7 @@ import logo from "./logo.png"
 
 function Logo(props) {
 
-    const { size, showText } = props
+    const { size, showText = true } = props
 
     const style = {
         width: size,

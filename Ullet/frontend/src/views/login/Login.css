@@ -24,3 +24,7 @@
     margin: 0 auto;
     justify-content: center;
 }
+
+.login .fill-button {
+    width: 100%;
+}

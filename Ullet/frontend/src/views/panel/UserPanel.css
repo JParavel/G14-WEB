@@ -1,0 +1,41 @@
+.user-panel .balance {
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.user-panel .balance p {
+    font-size: 32px;
+}
+
+.transactions {
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.transaction {
+    background-color: rgb(232, 232, 232);
+    padding: 1rem;
+    border-radius: var(--default-radius);
+
+    grid-template-columns: 1fr 1fr;
+
+    width: 20rem;
+}
+
+.transaction .from {
+    color: var(--main-color);
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.transaction .value {
+    color: var(--main-color);
+    font-weight: 700;
+    font-size: 24px;
+    text-align: right;
+}
+
+.transaction .date {
+    font-size: 24px;
+}

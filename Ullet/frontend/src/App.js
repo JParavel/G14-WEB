@@ -5,6 +5,7 @@ import "./assets/global.css"
 import Navbar from './components/ui/Navbar';
 import Home from './views/home/Home';
 import Login from './views/login/Login';
+import UserPanel from './views/panel/UserPanel';
 import Register from './views/register/Register';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
 
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
+            <Route path='/user-panel' element={<UserPanel />} />
         </Routes>
     )
 }

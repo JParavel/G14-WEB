@@ -1,4 +1,5 @@
 //Importamos las dependencias
+import cors from "cors"
 import dotenv from "dotenv"
 import express from "express"
 import mongoose, { mongo } from "mongoose"
@@ -30,6 +31,9 @@ mongoose.connect(uri, (err) => {
 })
 
 //Middlewares
+app.use(cors({
+    origin: "http://localhost:3000"
+}))
 app.use(express.json()) //Este middleware ayuda a que express entienda JSON
 app.use("/api", apiRouter)
 app.use("/", (req, res) => res.json("Bienvenido a UlletAPI!"))

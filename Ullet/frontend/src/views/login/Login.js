@@ -10,13 +10,13 @@ function Login() {
     return (
         <section className='login'>
             <div className="container">
-                <Link to="/"><Logo /></Link>
+                <Link to="/"><Logo showText={false} /></Link>
                 <h1 className='title'>Iniciar Sesión en <b>Ullet</b></h1>
                 <p>¡Que gusto verte nuevamente!</p>
                 <form className='flex card form'>
                     <Input>Usuario</Input>
                     <Input type="password">Contraseña</Input>
-                    <Button style="fill">Iniciar Sesión</Button>
+                    <Link to="/user-panel"><Button style="fill">Iniciar Sesión</Button></Link>
                 </form>
                 <div className='register card'>
                     <p>
