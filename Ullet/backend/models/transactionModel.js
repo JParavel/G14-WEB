@@ -1,9 +1,12 @@
 import mongoose from "mongoose";
 
-const transactionSchema = new mongoose.Schema({
+const transactionSchema = new mongoose.Schema(
+  {
     from: { type: String, required: true },
     to: { type: String, required: true },
     value: { type: Number, required: true },
-}, { timestamps: true })
+  },
+  { timestamps: true }
+);
 
-export default mongoose.model("transactons", transactionSchema)
+export default mongoose.model("transactions", transactionSchema);

@@ -1,10 +1,12 @@
-import express from "express"
-import transactionRouter from "./transactonRouter.js"
-import userRouter from "./userRouter.js"
+import express from "express";
+import { login } from "../modules/authModule.js";
+import transactionRouter from "./transactonRouter.js";
+import userRouter from "./userRouter.js";
 
-const apiRouter = express.Router()
+const apiRouter = express.Router();
 
-apiRouter.use("/user", userRouter)
-apiRouter.use("/transaction", transactionRouter)
+apiRouter.use("/user", userRouter);
+apiRouter.use("/transaction", transactionRouter);
+apiRouter.get("/login", login);
 
-export default apiRouter
+export default apiRouter;
