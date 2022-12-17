@@ -19,6 +19,7 @@ Repositorio de las clases de desarrollo web.
     * <button> onClick()
     * <input> onChange()
   * Consultas al backend : fetch()
+  * react hooks: useState(), useEffect(), useContext(), useNavigation() -> react-router-dom
   * jwt, bcrypt (Autenticación y Autorizacion con ReactJS)
  ### 7) CSS estilos a los componentes
   * apernder a usar FLEX y GRID
