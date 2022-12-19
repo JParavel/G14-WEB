@@ -5,7 +5,7 @@ Repositorio de las clases de desarrollo web.
 
 ## Frontend
 ### 1) Instalar React
-        npm creat vite@latest .
+        npm create vite@latest .
 ### 2) Estructura de Archivos : [Components -- componentes de react, Views -- vistas, Services -- fetch, Contexts -- variables globales, assets -- multimedia]
 ### 3) Importar React Router (Enlaces a la página web)
         npm install react-router-dom
