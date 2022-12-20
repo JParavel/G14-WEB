@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { useCookies } from "react-cookie";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../assets/Logo";
 import Button from "../../components/forms/Button";
@@ -15,6 +16,7 @@ function Login() {
 
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [cookies, setCookie] = useCookies(["token", "userName"]);
 
   const navigate = useNavigate();
 
@@ -24,7 +26,9 @@ function Login() {
 
     if (token) {
       setToken(token);
+      setCookie("token", token, "/");
       setUser({ name: userName });
+      setCookie("userName", userName);
       navigate("/panel");
     } else {
       alert("Credenciales Incorrectas");

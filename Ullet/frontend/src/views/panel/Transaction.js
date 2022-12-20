@@ -1,15 +1,25 @@
 import React, { useContext } from "react";
+import { useCookies } from "react-cookie";
 import UserContext from "../../contexts/UserContext";
 
 import "./UserPanel.css";
 
 function Transaction(props) {
   const { user } = useContext(UserContext);
+  const [cookies, setCookies] = useCookies(["userName"]);
+
+  let currentUser;
+
+  if (user) {
+    currentUser = user.name;
+  } else {
+    currentUser = cookies.userName;
+  }
 
   const { data } = props;
   const { from, to, value, createdAt } = data;
 
-  if (from == user.name) {
+  if (from == currentUser) {
     //Salientes
     return (
       <div style={{ marginLeft: "auto" }} className="transaction grid">

@@ -7,6 +7,8 @@ export async function createUser(req, res) {
     const { user } = req.body;
     let { password } = user;
 
+    console.log(user);
+
     password = await bcrypt.hash(password, 10);
     user.password = password;
 

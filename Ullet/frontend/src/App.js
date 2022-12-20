@@ -5,6 +5,7 @@ import "./assets/global.css";
 import Navbar from "./components/ui/Navbar";
 import { TokenProvider } from "./contexts/TokenContext";
 import { UserProvider } from "./contexts/UserContext";
+import { CookiesProvider } from "react-cookie";
 import Home from "./views/home/Home";
 import Login from "./views/login/Login";
 import UserPanel from "./views/panel/UserPanel";
@@ -22,31 +23,37 @@ function App() {
       <Route
         path="/login"
         element={
-          <TokenProvider>
-            <UserProvider>
-              <Login />
-            </UserProvider>
-          </TokenProvider>
+          <CookiesProvider>
+            <TokenProvider>
+              <UserProvider>
+                <Login />
+              </UserProvider>
+            </TokenProvider>
+          </CookiesProvider>
         }
       />
       <Route
         path="/register"
         element={
-          <TokenProvider>
-            <UserProvider>
-              <Register />
-            </UserProvider>
-          </TokenProvider>
+          <CookiesProvider>
+            <TokenProvider>
+              <UserProvider>
+                <Register />
+              </UserProvider>
+            </TokenProvider>
+          </CookiesProvider>
         }
       />
       <Route
         path="/panel"
         element={
-          <TokenProvider>
-            <UserProvider>
-              <UserPanel />
-            </UserProvider>
-          </TokenProvider>
+          <CookiesProvider>
+            <TokenProvider>
+              <UserProvider>
+                <UserPanel />
+              </UserProvider>
+            </TokenProvider>
+          </CookiesProvider>
         }
       />
 
