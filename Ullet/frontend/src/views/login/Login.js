@@ -26,9 +26,9 @@ function Login() {
 
     if (token) {
       setToken(token);
-      setCookie("token", token, "/");
+      setCookie("token", token, { maxAge: 7 * 24 * 60 * 60 });
       setUser({ name: userName });
-      setCookie("userName", userName);
+      setCookie("userName", userName, { maxAge: 7 * 24 * 60 * 60 }); //Expiración en 7 días
       navigate("/panel");
     } else {
       alert("Credenciales Incorrectas");
@@ -56,7 +56,7 @@ function Login() {
             Contraseña
           </Input>
 
-          <Button onClick={onButtonClick} style="fill">
+          <Button onClick={onButtonClick} style={"fill"}>
             Iniciar Sesión
           </Button>
         </form>
