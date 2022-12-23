@@ -1,0 +1,22 @@
+.login .logo {
+    justify-content: center;
+    margin: 1rem auto;
+}
+
+.login .title {
+    text-align: center;
+    font-weight: 300;
+}
+
+.login .form {
+    max-width: 25rem;
+    margin: 1rem auto;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.login .register {
+    max-width: 25rem;
+    margin: 0 auto;
+    justify-content: center;
+}

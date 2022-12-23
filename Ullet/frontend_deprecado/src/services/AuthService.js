@@ -1,7 +1,5 @@
-import { API_URL } from "./api";
-
 export async function login(user, password) {
-  const res = await fetch(API_URL + "/api/login/", {
+  const res = await fetch("http://localhost:8080/api/login/", {
     headers: {
       name: user,
       password: password,
@@ -24,7 +22,7 @@ export async function register(user, password) {
       password: password,
     },
   };
-  const res = await fetch(API_URL + "/api/user/", {
+  const res = await fetch("http://localhost:8080/api/user/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

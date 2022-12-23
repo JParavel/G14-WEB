@@ -32,7 +32,7 @@ mongoose.connect(uri, (err) => {
 //Middlewares
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: process.env.ORIGIN,
   })
 );
 app.use(express.json()); //Este middleware ayuda a que express entienda JSON

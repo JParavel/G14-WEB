@@ -26,7 +26,7 @@ export async function register(req, res) {
     res.status(200);
     res.json(document);
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
     res.status(400);
     res.json(error.message);
   }
@@ -53,8 +53,31 @@ export async function login(req, res) {
     res.status(200);
     res.json({ token });
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
     res.status(400);
+    res.json(error.message);
+  }
+}
+
+export async function validateToken(req, res, next) {
+  try {
+    //Tomamos el token de los headers de la petición
+    const token = req.headers;
+
+    //Decodificamos el token
+    const document = jwt.verify(token, secretKey);
+
+    //Encontramos un usuario con la id que se encontraba en el documento decodificado
+    const user = await userModel.findById(document._id);
+
+    //Si no hay un usuario que corresponda con esa id, negamos la autorizacion
+    if (!user) return res.sendStatus(401);
+
+    //Pasamos el usuario a través de la peticion
+    req.user;
+    next();
+  } catch (error) {
+    res.status(401);
     res.json(error.message);
   }
 }

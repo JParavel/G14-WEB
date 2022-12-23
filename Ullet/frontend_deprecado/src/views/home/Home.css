@@ -1,0 +1,43 @@
+.main-headline {
+    margin-top: 5rem;
+    font-weight: 700;
+}
+
+.main-headline .title {
+    font-size: 28px;
+    color: var(--main-color);
+}
+
+.main-headline .content {
+    font-size: 48px;
+    color: var(--main-color);
+}
+
+.supp-headline {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* .main-headline,
+.supp-headline {
+    max-width: 25rem;
+} */
+
+.header img {
+    max-width: 100%;
+}
+
+.header .grid {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+@media (max-width: 45em) {
+    .header .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .header .illustration {
+        grid-row: 1;
+    }
+
+}
