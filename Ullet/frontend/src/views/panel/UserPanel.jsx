@@ -17,8 +17,6 @@ function UserPanel() {
   const [documents, setDocuments] = useState([]);
 
   useEffect(() => {
-    console.log(token);
-    console.log(cookies.token);
     if (!token && !cookies.token) {
       return navigate("/login");
     } else {

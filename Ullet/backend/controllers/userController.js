@@ -1,13 +1,10 @@
 import bcrypt from "bcrypt";
 import userModel from "../models/userModel.js";
-import { genToken } from "../modules/tokenGenerator.js";
 
 export async function createUser(req, res) {
   try {
     const { user } = req.body;
     let { password } = user;
-
-    console.log(user);
 
     password = await bcrypt.hash(password, 10);
     user.password = password;

@@ -19,8 +19,7 @@ function Login() {
       return alert("las contraseñas no coinciden");
     }
 
-    const res = await register(userInput, passwordInput);
-    console.log(res);
+    await register(userInput, passwordInput);
   }
 
   return (
