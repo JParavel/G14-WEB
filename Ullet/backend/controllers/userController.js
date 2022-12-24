@@ -16,9 +16,3 @@ export async function createUser(req, res) {
     res.status(400).json(error.message);
   }
 }
-
-export function getUser(req, res) {}
-
-export function updateUser(req, res) {}
-
-export function deleteUser(req, res) {}

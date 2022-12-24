@@ -10,8 +10,8 @@ export async function login(req, res) {
 
     const access = await bcrypt.compare(password, document.password);
     if (access) {
-      const token = genToken({ name });
-      res.status(200).json({ token });
+      const token = genToken({ name: name });
+      res.status(200).json({ token: token });
     } else {
       res.sendStatus(401);
     }

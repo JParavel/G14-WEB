@@ -2,7 +2,7 @@ import transactionModel from "../models/transactionModel.js";
 
 export async function getTransactions(req, res) {
   try {
-    const { name } = req.value;
+    const { name } = req.user;
 
     const documents = await transactionModel.find({
       $or: [{ to: name }, { from: name }],
